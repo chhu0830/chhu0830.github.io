@@ -1,5 +1,6 @@
-import * as React from 'react';
+import React from 'react'
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container'
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 
@@ -9,9 +10,7 @@ interface NavbarProps {
   handleChange: (event: React.SyntheticEvent, newValue: string) => void
 }
 
-const Navbar = (props: NavbarProps) => {
-  const {tab, tabs, handleChange} = props
-
+const Navbar = ({tab, tabs, handleChange}: NavbarProps) => {
   return (
     <Box
       sx={{
@@ -24,12 +23,14 @@ const Navbar = (props: NavbarProps) => {
           borderColor: 'divider'
         }}
       >
-        <Tabs
-          value={tab}
-          onChange={handleChange}
-        >
-          {tabs.map((tab) => (<Tab key={tab} label={tab} value={tab} />))}
-        </Tabs>
+        <Container>
+          <Tabs
+            value={tab}
+            onChange={handleChange}
+          >
+            {tabs.map((tab) => (<Tab key={tab} label={tab} value={tab} />))}
+          </Tabs>
+        </Container>
       </Box>
     </Box>
   );

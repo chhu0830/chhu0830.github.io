@@ -1,20 +1,24 @@
-import React from 'react';
+import React, {useState, ReactElement} from 'react'
+import HomePage from './HomePage'
 import Navbar from './Navbar'
 import './App.css';
 
 const App = () => {
-  const pages = {
-    'Home': <></>,
+  const pages: {[key: string]: ReactElement} = {
+    'Home': <HomePage />,
     'Profolio': <></>,
   }
 
-  const [page, setPage] = React.useState('Home');
+  const [page, setPage] = useState('Home');
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setPage(newValue);
   };
 
   return (
-    <Navbar tab={page} tabs={Object.keys(pages)} handleChange={handleChange} />
+    <>
+      <Navbar tab={page} tabs={Object.keys(pages)} handleChange={handleChange} />
+      {pages[page]}
+    </>
   )
 }
 
