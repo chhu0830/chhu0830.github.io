@@ -1,23 +1,25 @@
 import React, {useState, ReactElement} from 'react'
-import HomePage from './HomePage'
-import Navbar from './Navbar'
+
+import HomePage from 'home/Home'
+import Navbar from 'Navbar'
+
 import './App.css';
 
 const App = () => {
-  const pages: {[key: string]: ReactElement} = {
+  const tabs: {[key: string]: ReactElement} = {
     'Home': <HomePage />,
     'Profolio': <></>,
   }
 
-  const [page, setPage] = useState('Home');
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    setPage(newValue);
+  const [activeTab, setActiveTab] = useState('Home');
+  const setNewActiveTab = (event: React.SyntheticEvent, newValue: string) => {
+    setActiveTab(newValue);
   };
 
   return (
     <>
-      <Navbar tab={page} tabs={Object.keys(pages)} handleChange={handleChange} />
-      {pages[page]}
+      <Navbar activeTab={activeTab} tabs={Object.keys(tabs)} handleChange={setNewActiveTab} />
+      {tabs[activeTab]}
     </>
   )
 }

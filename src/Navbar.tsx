@@ -5,12 +5,12 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 
 interface NavbarProps {
-  tab: string,
+  activeTab: string,
   tabs: string[],
   handleChange: (event: React.SyntheticEvent, newValue: string) => void
 }
 
-const Navbar = ({tab, tabs, handleChange}: NavbarProps) => {
+const Navbar = ({activeTab, tabs, handleChange}: NavbarProps) => {
   return (
     <Box
       sx={{
@@ -25,7 +25,7 @@ const Navbar = ({tab, tabs, handleChange}: NavbarProps) => {
       >
         <Container>
           <Tabs
-            value={tab}
+            value={activeTab}
             onChange={handleChange}
           >
             {tabs.map((tab) => (<Tab key={tab} label={tab} value={tab} />))}
