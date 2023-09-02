@@ -1,14 +1,15 @@
 import React, {useState, ReactElement} from 'react'
 
-import HomePage from 'home/Home'
 import Navbar from 'Navbar'
+import HomePage from 'home/Home'
+import Portofolio from 'portfolio/Portfolio'
 
 import './App.css';
 
 const App = () => {
   const tabs: {[key: string]: ReactElement} = {
     'Home': <HomePage />,
-    'Profolio': <></>,
+    'Portfolio': <Portofolio />,
   }
 
   const [activeTab, setActiveTab] = useState('Home');

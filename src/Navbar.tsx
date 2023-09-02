@@ -10,7 +10,7 @@ interface NavbarProps {
   handleChange: (event: React.SyntheticEvent, newValue: string) => void
 }
 
-const Navbar = ({activeTab, tabs, handleChange}: NavbarProps) => {
+const Navbar = ({activeTab, tabs, handleChange}: NavbarProps):JSX.Element => {
   return (
     <Box
       sx={{
