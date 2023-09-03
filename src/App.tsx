@@ -3,6 +3,7 @@ import React, {useState, ReactElement} from 'react'
 import Navbar from 'Navbar'
 import HomePage from 'home/Home'
 import Portofolio from 'portfolio/Portfolio'
+import Article from 'article/Article'
 
 import './App.css';
 
@@ -10,6 +11,7 @@ const App = () => {
   const tabs: {[key: string]: ReactElement} = {
     'Home': <HomePage />,
     'Portfolio': <Portofolio />,
+    'Article': <Article />,
   }
 
   const [activeTab, setActiveTab] = useState('Home');
