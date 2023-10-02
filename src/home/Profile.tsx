@@ -10,6 +10,12 @@ import ListItemText from '@mui/material/ListItemText'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 
+interface InfoProps {
+  children: ReactNode
+  title: string
+  primary?: boolean
+}
+
 interface ProfileInfoProps {
   bio: {name: string, description: string}
   education: {title: string, description: string}[]
@@ -20,24 +26,18 @@ interface ProfileProps extends ProfileInfoProps {
   avatarImg: string
 }
 
+const Info = ({children, title, primary}: InfoProps) => {
+  return (
+    <Box>
+      <Typography variant={primary ? "h4" : "h5"} align="center">
+        {title}
+      </Typography>
+      {children}
+    </Box>
+  )
+}
+
 const ProfileInfo = ({bio, education, skills}: ProfileInfoProps) => {
-  interface InfoProps {
-    children: ReactNode
-    title: string
-    primary?: boolean
-  }
-
-  const Info = ({children, title, primary}: InfoProps) => {
-    return (
-      <Box>
-        <Typography variant={primary ? "h4" : "h5"} align="center">
-          {title}
-        </Typography>
-        {children}
-      </Box>
-    )
-  }
-
   const Bio = (
     <Info title={bio.name} primary>
       <Container>
@@ -101,8 +101,11 @@ const Profile = ({avatarImg, bio, education, skills}: ProfileProps) => {
           alt="avatar"
           src={avatarImg}
           sx={{
-            width: '250px',
-            height: '250px',
+            width: '10vw',
+            height: '10vw',
+            maxWidth: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         />
       </Container>

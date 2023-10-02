@@ -23,7 +23,7 @@ const Portofolio = ():JSX.Element => {
     <Container sx={{paddingTop: '10px'}}>
       <Grid container rowSpacing={2} columnSpacing={2}>
         {projects.map((project) => (
-          <Grid item xs={4}>
+          <Grid item md={4} xs={12}>
             <Project {...project} />
           </Grid>
         ))}

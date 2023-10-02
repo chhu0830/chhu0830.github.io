@@ -14,7 +14,7 @@ const Home = ():JSX.Element => {
       avatarImg={AvatarImg}
       bio={{
         name: "Chia-Hsuan Hu",
-        description: "I'm a software developer and a security engineer. Learning new things is exciting, and I'll keep doing it."
+        description: "A software developer as well as a security engineer with a passion for continuous growth and learning."
       }}
       education={[
         {title: "MSc in Cyber Security", description: "DSNS Lab, NCTU, Taiwan"},
